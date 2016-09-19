@@ -26,7 +26,7 @@ ee.on('\\dm', function(client, string) {
   message = string.split(' ').slice(1).join('');
   pool.forEach(cli => {
     if(cli.nickname == nickname) {
-      client.socket.write('Message sent to ' + cli.nickname);
+      client.socket.write('Message was sent to ' + cli.nickname);
       cli.socket.write(`${client.nickname}: ` + message);
     }
   });
@@ -50,7 +50,17 @@ server.on('connection', function(socket){
     }
     ee.emit('default', client, data.toString());
   });
-});
+  socket.on('error', function(data){
+    console.error('There was an error', data);
+  });
+  socket.on('close', function(data){
+    pool.forEach(cli => {
+      if(cli.id == client.id) {
+        let index = indexOf(cli);
+        pool.splice(index, 1);
+      }
+    });
+  });
 
 server.listen(PORT, function(){
   console.log('running on port', PORT);
