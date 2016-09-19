@@ -2,7 +2,7 @@
   "name": "lab-06-tcp-chat",
   "version": "1.0.0",
   "description": "![cf](https://i.imgur.com/7v5ASc8.png) lab-06-tcp-chat-server ======",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,8 @@
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^3.0.1",
     "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "node-uuid": "^1.4.7"
   }
 }
