@@ -15,16 +15,16 @@
 * package.json
 * gulpfile
 * readme
- * Write a paragraph about your project 
+ * Write a paragraph about your project
  * Write docs on how to get the project running
  * Write docs on how to connect to the server
- 
+
 ## Directions
 * Create a TCP Server use using the net module
-* Create a Clinet Constructor 
+* Create a Clinet Constructor
 * When sockets connect to the server a new `Client` instance should be made
 * Clients should have a unique `id` from `node-uuid`
- * **e.g.** `2309-4802-3948-...` 
+ * **e.g.** `2309-4802-3948-...`
 * Clients should have a unique 'nickname'
  * **e.g.** `guest-43`
 * When sockets are connected with the ClientPool they should be given event listeners for `data`, `error`, and `close` events
@@ -40,5 +40,9 @@
  * **i.e.** `teapot: Sup Hacker?`
 
 ## Bonus
-* 2pts Write a test that 
- * that tests `\nick` actually changes a clients nickname 
+* 2pts Write a test that
+ * that tests `\nick` actually changes a clients nickname
+
+
+##About this program:
+This program is a chat forum that allows clients to set up a unique username and communicate to other clients and their respective usernames via sockets. Users have the ability to send direct messages to other users as well as broadcast messages to any given number of users so long as other clients are valid with valid usernames.
