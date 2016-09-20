@@ -33,7 +33,7 @@ ee.on('\\dm', function(client, string) {
 });
 
 ee.on('default', function(client, string){
-  client.socket.write('this is not a command');
+  client.socket.write('this is not a command', string);
 });
 
 //module logic
@@ -42,7 +42,6 @@ server.on('connection', function(socket){
   pool.push(client);
   socket.on('data', function(data){
     const command = data.toString().split(' ').shift().trim();
-    const message = data.toString().split(' ');
 
     if(command.startsWith('\\')){
       ee.emit(command, client, data.toString().split(' ').slice(1).join(' '));
@@ -50,17 +49,20 @@ server.on('connection', function(socket){
     }
     ee.emit('default', client, data.toString());
   });
-  socket.on('error', function(data){
-    console.error('There was an error', data);
+  socket.on('error', function(err){
+    console.error('There was an error', err);
   });
-  socket.on('close', function(data){
+  socket.on('close', function(){
+    console.log('pool before splice', pool.length);
     pool.forEach(cli => {
-      if(cli.id == client.id) {
-        let index = indexOf(cli);
+      let index = pool.indexOf(cli);
+      if(cli.id === client.id) {
         pool.splice(index, 1);
+        console.log('pool after splice', pool.length);
       }
     });
   });
+});
 
 server.listen(PORT, function(){
   console.log('running on port', PORT);
