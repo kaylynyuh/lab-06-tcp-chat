@@ -45,7 +45,29 @@
 
 
 ##About this program:
-This program is a chat forum that allows clients to set up a unique username and communicate to other clients and their respective usernames via sockets. Users have the ability to send direct messages to other users as well as broadcast messages to any given number of users so long as other clients are valid with valid usernames. If a user types a message, then the username of that user as well as the message that was created should be visible to others.
+This program is a chat emulator that allows the user to set up multiple clients with unique usernames that can communicate to other clients and their respective usernames via sockets. As the user you have the ability to send direct messages to other users that you create as well as broadcast messages to any given number of those users so long as the other clients are valid with valid usernames. If you create a message as one user, then the message as well as the username of that current user should be displayed to the other clients.
 
 ##User Guide:
-```kjlj```
+To get started, run your server in node by using the following command:
+```
+node server.js
+```
+To access the server remotely:
+```
+telnet localhost 3000
+```
+Once you have successfully accessed the server, create your users by setting their nicknames(usernames) accordingly for each client. It is important to note that each user will belong to it's own client:
+```
+\nick <username>
+```
+In order to broadcast messages to all users:
+```
+\all <message>
+```
+*To verify, make sure that all users receive the same message.*
+
+Direct message other users:
+```
+\<username> <message>
+```
+*To verify, make sure that the user you specified is the only recipient of the direct message.*
