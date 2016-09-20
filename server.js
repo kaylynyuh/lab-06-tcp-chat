@@ -54,12 +54,10 @@ server.on('connection', function(socket){
     console.error('There was an error', err);
   });
   socket.on('close', function(){
-    console.log('pool before splice', pool.length);
     pool.forEach(cli => {
       let index = pool.indexOf(cli);
       if(cli.id === client.id) {
         pool.splice(index, 1);
-        console.log('pool after splice', pool.length);
       }
     });
   });
