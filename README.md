@@ -45,4 +45,7 @@
 
 
 ##About this program:
-This program is a chat forum that allows clients to set up a unique username and communicate to other clients and their respective usernames via sockets. Users have the ability to send direct messages to other users as well as broadcast messages to any given number of users so long as other clients are valid with valid usernames.
+This program is a chat forum that allows clients to set up a unique username and communicate to other clients and their respective usernames via sockets. Users have the ability to send direct messages to other users as well as broadcast messages to any given number of users so long as other clients are valid with valid usernames. If a user types a message, then the username of that user as well as the message that was created should be visible to others.
+
+##User Guide:
+```kjlj```
