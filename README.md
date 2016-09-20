@@ -70,4 +70,4 @@ Direct message other users:
 ```
 \<username> <message>
 ```
-*To verify, make sure that the user you specified is the only recipient of the direct message.*
+*To verify, make sure that the user specified as the receiver    is the only recipient of the direct message.*

@@ -9,6 +9,7 @@ const pool = [];
 const server = net.createServer();
 const ee = new EE();
 
+module.exports = exports = {};
 
 ee.on('\\nick', function(client, string){
   client.nickname = string.trim();
