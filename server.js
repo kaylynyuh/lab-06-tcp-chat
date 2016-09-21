@@ -37,7 +37,6 @@ ee.on('default', function(client, string){
   client.socket.write('this is not a command', string);
 });
 
-//module logic
 server.on('connection', function(socket){
   var client = new Client(socket);
   pool.push(client);
